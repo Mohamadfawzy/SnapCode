@@ -1,5 +1,5 @@
             <StackLayout>
-                <Label Text="4" FontSize="Header" />
+                <Label Text="4" FontSize="Header" /> <!-- 96 -->
                 <Label FontSize="Title" /> <!-- 24 -->
                 <Label FontSize="Large" /> <!-- 22 -->
                 <Label FontSize="Medium" /> <!-- 18 -->
