@@ -1,0 +1,15 @@
+            <StackLayout>
+                <Label Text="4" FontSize="Header" />
+                <Label FontSize="Title" /> <!-- 24 -->
+                <Label FontSize="Large" /> <!-- 22 -->
+                <Label FontSize="Medium" /> <!-- 18 -->
+                
+                <Label FontSize="Body" /> <!-- 16 -->
+                <Label FontSize="Subtitle" /> <!-- 16 -->
+                
+                <Label FontSize="Default" /> <!-- 14-->
+                <Label FontSize="Small" /> <!-- 14-->
+                
+                <Label FontSize="Caption" /><!-- 12 -->
+                <Label FontSize="Micro" /> <!-- 10 -->
+            </StackLayout>
