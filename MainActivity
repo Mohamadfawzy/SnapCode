@@ -1,0 +1,40 @@
+protected override void OnCreate(Bundle savedInstanceState)
+{
+    base.OnCreate(savedInstanceState);
+
+
+    Window.SetNavigationBarColor(Android.Graphics.Color.Argb(255, 0, 0, 70));
+    this.SetStatusBarColor(Xamarin.Forms.Color.FromHex("#834Fx0").ToAndroid());
+
+
+
+    LoadApplication(new App());
+}
+
+
+// ----------------------------------------------------------keyboard always open-------------------------------------------------------------------------------------------------------------------
+#region this code implement => How to keep soft keyboard always open in Xamarin Forms 
+private bool _lieAboutCurrentFocus;
+public override bool DispatchTouchEvent(MotionEvent ev)
+{
+    var focused = CurrentFocus;
+    bool customEntryRendererFocused = focused != null && focused.Parent is CustomEntryRenderer;
+
+    _lieAboutCurrentFocus = customEntryRendererFocused;
+    var result = base.DispatchTouchEvent(ev);
+    _lieAboutCurrentFocus = false;
+    return result;
+}
+public override Android.Views.View CurrentFocus
+{
+    get
+    {
+        if (_lieAboutCurrentFocus)
+        {
+        return null;
+        }
+
+        return base.CurrentFocus;
+        }
+}
+#endregion
