@@ -1,0 +1,48 @@
+<!-- // create an array  -------------------------------------------------------------------------------------------- .-->
+<x:Array x:Key="MyArray" Type="{x:Type x:String}">
+    <x:String>Edit Profile</x:String>
+    <x:String>My Cart</x:String>
+    <x:String>My wishlist</x:String>
+    <x:String>Payment</x:String>
+    <x:String>Notifcations</x:String>
+    <x:String>Categories</x:String>
+    <x:String>My Orders</x:String>
+    <x:String>Settings</x:String>
+    <x:String>Live Chat</x:String>
+    <x:String>Help</x:String>
+    <x:String>About App</x:String>
+    <x:String>Logout</x:String>
+</x:Array>
+
+  <Label Text="{Binding Source={StaticResource MyArray },Path=[2]}" />
+
+<!-- // ------------------------  BindingContext Wtih self  -------------------------------------------------------------------------------------------- .-->
+  x:Name="thisXaml"
+  BindingContext="{x:Reference thisXaml}"
+
+<!-- //------------------------ Binding with An array in a class  -------------------------------------------------------------------------------------------- .-->
+public string[] ItemsIconsArrayRight
+        {
+            get => new string[ItemsCount]
+            {
+                IconFont.AccountEditOutline  ,
+                IconFont.Cart,
+                IconFont.Heart,
+                IconFont.CreditCardOutline,
+                IconFont.Bell
+            };
+        }
+Title="{Binding Source={Reference this}, Path=ItemsTitlesArray[6]}"
+
+<!-- // ------------------------ -------------------------------------------------------------------------------------------- .-->
+نقل العنصر لمسافة بقدر حجمه او حجم عنصر أخر قبل أعادة موضعته
+TranslationX="{Binding Source={Reference parentStack}, Path=Width, StringFormat='-{0}'}"
+// تحديد الارتفاع
+HeightRequest="{Binding Source={Reference this}, Path=Height}"
+
+<!-- //------------------------  -------------------------------------------------------------------------------------------- .-->
+
+<!-- // ------------------------ -------------------------------------------------------------------------------------------- .-->
+
+<!-- // ------------------------ -------------------------------------------------------------------------------------------- .-->
+<!-- // ------------------------ -------------------------------------------------------------------------------------------- .-->
