@@ -40,8 +40,12 @@ TranslationX="{Binding Source={Reference parentStack}, Path=Width, StringFormat=
 // تحديد الارتفاع
 HeightRequest="{Binding Source={Reference this}, Path=Height}"
 
-<!-- //------------------------  -------------------------------------------------------------------------------------------- .-->
-
+<!-- //------------------------ Binging to Command  outside collection  -------------------------------------------------------------------------------------------- .-->
+<Label.GestureRecognizers>
+    <TapGestureRecognizer  Command="{Binding Source={x:Reference Page}, Path=BindingContext.PlusQuantityCommand}"
+                           Command="{Binding BindingContext.PlusQuantityCommand, Source={x:Reference Name=MealsCV}}"
+                           CommandParameter="{Binding Source={RelativeSource Self}, Path=BindingContext}" />
+ </Label.GestureRecognizers>
 <!-- // ------------------------ -------------------------------------------------------------------------------------------- .-->
 
 <!-- // ------------------------ -------------------------------------------------------------------------------------------- .-->
